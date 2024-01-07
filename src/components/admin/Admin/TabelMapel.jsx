@@ -62,9 +62,7 @@ export default function TabelMapel({ data, children }) {
   }, []);
 
   const fetchData = async () => {
-    const getMapel = await axios.get(
-      `${BACKEND_BASE_URL}/api/getMataPelajaran`
-    );
+    const getMapel = await axios.get(`${BACKEND_BASE_URL}api/getMataPelajaran`);
     setMapel(getMapel.data.results);
   };
 
@@ -79,7 +77,7 @@ export default function TabelMapel({ data, children }) {
     e.preventDefault();
     try {
       const tambah = await axios.post(
-        `${BACKEND_BASE_URL}/api/requestIzin`,
+        `${BACKEND_BASE_URL}api/requestIzin`,
         izin
       );
 
@@ -95,7 +93,7 @@ export default function TabelMapel({ data, children }) {
     try {
       setIdIzin(id);
       setEditBarang(!editBarang);
-      const res = await axios.get(`${BACKEND_BASE_URL}/api/getIzinById/${id}`);
+      const res = await axios.get(`${BACKEND_BASE_URL}api/getIzinById/${id}`);
       setIzinEdit(res.data.results);
     } catch (err) {
       console.log(err);
@@ -105,7 +103,7 @@ export default function TabelMapel({ data, children }) {
   const EditIzin = async () => {
     try {
       const res = await axios.put(
-        `${BACKEND_BASE_URL}/api/EditIzin/${idIzin}`,
+        `${BACKEND_BASE_URL}api/EditIzin/${idIzin}`,
         izinEdit
       );
       if (res.status === 200) {

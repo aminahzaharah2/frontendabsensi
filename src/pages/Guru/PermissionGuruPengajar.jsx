@@ -22,7 +22,7 @@ export default function PermissionGuruPengajar() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        `${BACKEND_BASE_URL}/api/getIzinPengajar/${user.id}`
+        `${BACKEND_BASE_URL}api/getIzinPengajar/${user.id}`
       );
       setIzin(result.data.results);
 

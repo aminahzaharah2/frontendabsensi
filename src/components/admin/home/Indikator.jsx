@@ -16,20 +16,20 @@ export default function Indikator() {
 
   const dashboard = async () => {
     await axios
-      .get(`${BACKEND_BASE_URL}/api/DashboardKurikulum/${user?.id}`)
+      .get(`${BACKEND_BASE_URL}api/DashboardKurikulum/${user?.id}`)
       .then((res) => {
         setKurikulum(res?.data);
       });
-    await axios.get(`${BACKEND_BASE_URL}/api/DashboardAdmin`).then((res) => {
+    await axios.get(`${BACKEND_BASE_URL}api/DashboardAdmin`).then((res) => {
       setAdmin(res?.data);
     });
     await axios
-      .get(`${BACKEND_BASE_URL}/api/DashboardSiswa/${user?.id}`)
+      .get(`${BACKEND_BASE_URL}api/DashboardSiswa/${user?.id}`)
       .then((res) => {
         setSiswa(res?.data);
       });
     await axios
-      .get(`${BACKEND_BASE_URL}/api/DashboardGuru/${user?.id}`)
+      .get(`${BACKEND_BASE_URL}api/DashboardGuru/${user?.id}`)
       .then((res) => {
         setGuru(res?.data);
       });

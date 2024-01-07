@@ -23,7 +23,7 @@ export default function IzinGuru() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        `${BACKEND_BASE_URL}/api/getIzinGuruById/${user.id}`
+        `${BACKEND_BASE_URL}api/getIzinGuruById/${user.id}`
       );
       setIzin(result.data.results);
 

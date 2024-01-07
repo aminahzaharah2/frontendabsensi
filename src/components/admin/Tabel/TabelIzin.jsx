@@ -201,16 +201,12 @@ export default function TabelIzin({ data, children }) {
   ];
 
   const fetchData = async () => {
-    const getMapel = await axios.get(
-      `${BACKEND_BASE_URL}/api/getMataPelajaran`
-    );
+    const getMapel = await axios.get(`${BACKEND_BASE_URL}api/getMataPelajaran`);
     const getGuruPengajar = await axios.get(
-      `${BACKEND_BASE_URL}/api/getGuruPengajar`
+      `${BACKEND_BASE_URL}api/getGuruPengajar`
     );
-    const getKurikulum = await axios.get(
-      `${BACKEND_BASE_URL}/api/getKurikulum`
-    );
-    const getAllUser = await axios.get(`${BACKEND_BASE_URL}/api/getUser`);
+    const getKurikulum = await axios.get(`${BACKEND_BASE_URL}api/getKurikulum`);
+    const getAllUser = await axios.get(`${BACKEND_BASE_URL}api/getUser`);
 
     setMapel(getMapel.data.results);
     setAllUser(getAllUser.data.results);
@@ -289,7 +285,7 @@ export default function TabelIzin({ data, children }) {
         }
       }
       const response = await axios.post(
-        `${BACKEND_BASE_URL}/api/requestIzin`,
+        `${BACKEND_BASE_URL}api/requestIzin`,
         izin
       );
 
@@ -310,7 +306,7 @@ export default function TabelIzin({ data, children }) {
     try {
       setIdIzin(id);
       setEditBarang(!editBarang);
-      const res = await axios.get(`${BACKEND_BASE_URL}/api/getIzinById/${id}`);
+      const res = await axios.get(`${BACKEND_BASE_URL}api/getIzinById/${id}`);
 
       setIzinEdit(res.data.results[0]);
       CheckMapel = mapel.filter(
@@ -352,7 +348,7 @@ export default function TabelIzin({ data, children }) {
 
         izinEdit.foto = res?.data.secure_url;
         const response = await axios.put(
-          `${BACKEND_BASE_URL}/api/EditIzin/${idIzin}`,
+          `${BACKEND_BASE_URL}api/EditIzin/${idIzin}`,
           izinEdit
         );
         if (response.status === 200) {
@@ -368,7 +364,7 @@ export default function TabelIzin({ data, children }) {
         }
       } else {
         const response = await axios.put(
-          `${BACKEND_BASE_URL}/api/EditIzin/${idIzin}`,
+          `${BACKEND_BASE_URL}api/EditIzin/${idIzin}`,
           izinEdit
         );
         if (response.status === 200) {

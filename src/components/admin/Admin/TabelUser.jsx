@@ -67,7 +67,7 @@ export default function TabelUser({ data, children }) {
   }, []);
 
   const fetchData = async () => {
-    const getMapel = await axios.get(`${BACKEND_BASE_URL}/api/getUser`);
+    const getMapel = await axios.get(`${BACKEND_BASE_URL}api/getUser`);
     setAllUser(getMapel.data.results);
   };
 
@@ -82,7 +82,7 @@ export default function TabelUser({ data, children }) {
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
-          const res = axios.delete(`${BACKEND_BASE_URL}/api/deleteUser/${id}`);
+          const res = axios.delete(`${BACKEND_BASE_URL}api/deleteUser/${id}`);
           if (res.status == 200) {
             Swal.fire({
               title: "Terhaous",
@@ -109,7 +109,7 @@ export default function TabelUser({ data, children }) {
 
   const tambahUser = async () => {
     try {
-      const res = await axios.post(`${BACKEND_BASE_URL}/api/Register`, data);
+      const res = await axios.post(`${BACKEND_BASE_URL}api/Register`, data);
 
       if (res.status === 200) {
         nav("/home");

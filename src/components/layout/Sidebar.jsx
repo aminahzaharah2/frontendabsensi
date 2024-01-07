@@ -93,7 +93,7 @@ export default function Sidebar({ open, setSidebar, width, setWidth }) {
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
-          const res = fetch(`${BACKEND_BASE_URL}/api/logout`, {
+          const res = fetch(`${BACKEND_BASE_URL}api/logout`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

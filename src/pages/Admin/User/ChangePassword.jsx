@@ -34,7 +34,7 @@ export default function ChangePassword() {
     try {
       if (data.password == data.konfirmPassword) {
         const res = await axios.put(
-          `${BACKEND_BASE_URL}/api/ChangePassword/${id}`,
+          `${BACKEND_BASE_URL}api/ChangePassword/${id}`,
           data
         );
         Swal.fire({

@@ -32,7 +32,7 @@ export default function EditUser() {
 
   const GetUserById = async () => {
     try {
-      const res = await axios.get(`${BACKEND_BASE_URL}/api/getUserById/${id}`);
+      const res = await axios.get(`${BACKEND_BASE_URL}api/getUserById/${id}`);
       setUserSelected({
         id: res.data.results.id,
         name: res.data.results.name,
@@ -55,7 +55,7 @@ export default function EditUser() {
   const UpdateUser = async () => {
     try {
       const res = await axios.put(
-        `${BACKEND_BASE_URL}/api/updateDataUser/${userSelected?.id}`,
+        `${BACKEND_BASE_URL}api/updateDataUser/${userSelected?.id}`,
         userSelected
       );
       if (res.status === 200) {

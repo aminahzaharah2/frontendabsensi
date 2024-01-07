@@ -37,7 +37,7 @@ export default function PermintaanIzinGuru() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        `${BACKEND_BASE_URL}/api/getIzinById/${user.id}`
+        `${BACKEND_BASE_URL}api/getIzinById/${user.id}`
       );
       setIzin(result.data.results);
       setIzinSearch(result.data.results);

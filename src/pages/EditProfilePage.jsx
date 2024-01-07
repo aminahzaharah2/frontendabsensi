@@ -78,7 +78,7 @@ export default function EditProfilePage({ children }) {
         dataUser.fotoprofile = res1?.data?.secure_url;
       }
       const res = await axios.put(
-        `${BACKEND_BASE_URL}/api/updateDataUser/${user?.id}`,
+        `${BACKEND_BASE_URL}api/updateDataUser/${user?.id}`,
         dataUser
       );
       Swal.fire({

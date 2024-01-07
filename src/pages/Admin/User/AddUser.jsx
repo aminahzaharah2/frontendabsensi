@@ -63,7 +63,7 @@ export default function AddUser() {
         data.fotoprofile = res?.data?.secure_url;
       }
 
-      const res2 = await axios.post(`${BACKEND_BASE_URL}/api/Register`, data);
+      const res2 = await axios.post(`${BACKEND_BASE_URL}api/Register`, data);
 
       Swal.fire({
         title: "Berhasil menambahkan user",

@@ -52,7 +52,7 @@ export default function DetailIzin() {
       }).then((result) => {
         if (result.isConfirmed) {
           const add = axios.put(
-            `${BACKEND_BASE_URL}/api/BeriIzin/${id}/${user?.role}`
+            `${BACKEND_BASE_URL}api/BeriIzin/${id}/${user?.role}`
           );
           Swal.fire({
             title: "Mengizinkan",
@@ -88,7 +88,7 @@ export default function DetailIzin() {
       }).then((result) => {
         if (result.isConfirmed) {
           const update = axios.put(
-            `${BACKEND_BASE_URL}/api/TolakPengajuan/${id}/${user?.role}`
+            `${BACKEND_BASE_URL}api/TolakPengajuan/${id}/${user?.role}`
           );
 
           Swal.fire({
@@ -113,9 +113,9 @@ export default function DetailIzin() {
   };
 
   const fetchData = async () => {
-    const getAllUser = await axios.get(`${BACKEND_BASE_URL}/api/getUser`);
+    const getAllUser = await axios.get(`${BACKEND_BASE_URL}api/getUser`);
     const getIzinById = await axios.get(
-      `${BACKEND_BASE_URL}/api/getIzinById/${id}`
+      `${BACKEND_BASE_URL}api/getIzinById/${id}`
     );
 
     setAllUser(getAllUser.data.results);
@@ -125,7 +125,7 @@ export default function DetailIzin() {
   const BatalkanIzin = async (id) => {
     try {
       const res = await axios.put(
-        `${BACKEND_BASE_URL}/api/Batalkan/${id}/${user?.role}`
+        `${BACKEND_BASE_URL}api/Batalkan/${id}/${user?.role}`
       );
 
       if (res.status == 200) {

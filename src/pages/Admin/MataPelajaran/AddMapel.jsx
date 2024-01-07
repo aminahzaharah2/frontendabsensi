@@ -29,7 +29,7 @@ export default function AddMapel() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${BACKEND_BASE_URL}/api/AddMataPelajaran`,
+        `${BACKEND_BASE_URL}api/AddMataPelajaran`,
         mapel
       );
       if (res.statusCode === 200) {
@@ -67,7 +67,7 @@ export default function AddMapel() {
   const UpdateMapel = async (id) => {
     try {
       const result = await axios.put(
-        `${BACKEND_BASE_URL}/api/UpdateMataPelajaran` + id,
+        `${BACKEND_BASE_URL}api/UpdateMataPelajaran` + id,
         mapel
       );
       if (result) {
@@ -84,7 +84,7 @@ export default function AddMapel() {
 
   const DeleteMapel = async (id) => {
     const result = await axios.delete(
-      `${BACKEND_BASE_URL}/api/DeleteMapel/` + id
+      `${BACKEND_BASE_URL}api/DeleteMapel/` + id
     );
     if (result) {
       window.location.reload();
@@ -105,7 +105,7 @@ export default function AddMapel() {
   const fetchData = async () => {
     try {
       const resultPelajaran = await axios.get(
-        `${BACKEND_BASE_URL}/api/getMataPelajaran`
+        `${BACKEND_BASE_URL}api/getMataPelajaran`
       );
       setAllMapel(resultPelajaran.data.results);
     } catch (err) {

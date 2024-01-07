@@ -18,7 +18,7 @@ export default function PermintaanIzinSiswa() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        `${BACKEND_BASE_URL}/api/getIzinByKurikulumId/${user.id}`
+        `${BACKEND_BASE_URL}api/getIzinByKurikulumId/${user.id}`
       );
       setIzin(result.data.results);
 

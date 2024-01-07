@@ -21,9 +21,9 @@ export default function DetailUser() {
 
   const GetUserById = async () => {
     try {
-      const res = await axios.get(`${BACKEND_BASE_URL}/api/getUserById/${id}`);
+      const res = await axios.get(`${BACKEND_BASE_URL}api/getUserById/${id}`);
       await axios
-        .get(`${BACKEND_BASE_URL}/api/DashboardGuru/${id}`)
+        .get(`${BACKEND_BASE_URL}api/DashboardGuru/${id}`)
         .then((res) => {
           setIzin(res?.data);
         });

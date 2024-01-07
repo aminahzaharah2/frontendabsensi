@@ -10,7 +10,7 @@ export const loadUser = () => async (dispatch) => {
     const headers = {
       Authorization: `Bearer ${token}`,
     };
-    const { data } = await axios.get(`${BACKEND_BASE_URL}/api/user`, {
+    const { data } = await axios.get(`${BACKEND_BASE_URL}api/user`, {
       headers,
       withCredentials: true,
     });

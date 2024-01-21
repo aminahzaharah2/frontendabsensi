@@ -2,12 +2,19 @@ import logo from "../assets/ICON-1-2-1536x332.png";
 import logo2 from "../assets/5260-high_school_class-1296x728-header.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { BACKEND_BASE_URL } from "../config/base_url";
 
 export default function LandingPage() {
   const { user } = useSelector((state) => state.user);
+  const [test, setTest] = useState([])
+  const getTest = async() => {
+    const data = await fetch(`${BACKEND_BASE_URL}api/getUser`);
+    console.log("kont",data.json());
+  }
   const nav = useNavigate();
   useEffect(() => {
+    getTest();
     if (user) {
       nav("/home");
     }
@@ -50,6 +57,9 @@ export default function LandingPage() {
               Sistem Perizinan SMKN 1 Kabupaten Tangerang
             </h1>
           </div>
+        </div>
+        <div className="">
+
         </div>
       </div>
       <div className="w-full mx-auto  bg-[#155f95] ">

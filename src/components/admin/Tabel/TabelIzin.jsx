@@ -174,7 +174,7 @@ export default function TabelIzin({ data, children }) {
               <button
                 className="mr-4"
                 onClick={() => {
-                  nav("/Detail/" + params.id);
+                  nav("/Detail/" + params.id+"/1");
                 }}
               >
                 <BsEye size={20} />
@@ -298,6 +298,7 @@ export default function TabelIzin({ data, children }) {
       window.location.reload();
     } catch (err) {
       swalLoading.close();
+      console.log(err);
       setErrorIzin(err.response.data.error);
     }
   };
@@ -522,29 +523,6 @@ export default function TabelIzin({ data, children }) {
                   </p>
                 ) : null}
               </div>
-              <div className="w-full mt-4">
-                <h1 className="font-abc pb-2 ">Kurikulum</h1>
-                <select
-                  name="kurikulum"
-                  onChange={(e) => changeIzinHandler(e)}
-                  id=""
-                  className=" border-2 border-slate-500 rounded-xl pl-3 w-full h-[30px]"
-                >
-                  <option value="">- Select Kurikulum -</option>
-
-                  {kurikulum.map((item, index) => {
-                    return (
-                      <option key={index} value={`${item.id}`}>
-                        {item.name}
-                      </option>
-                    );
-                  })}
-                </select>
-                {errIzin?.kurikulum ? (
-                  <p className="text-red-500 text-sm">*{errIzin?.kurikulum}</p>
-                ) : null}
-              </div>
-
               {izin.typeIzin == "Keluar" ? (
                 <>
                   <div className="w-full mt-4">
@@ -800,36 +778,6 @@ export default function TabelIzin({ data, children }) {
                   <p className="text-red-500 text-sm">
                     *{errIzin?.guruPengajar}
                   </p>
-                ) : null}
-              </div>
-              <div className="w-full mt-4">
-                <h1 className="font-abc pb-2 ">Kurikulum</h1>
-                <select
-                  name="kurikulum"
-                  onChange={(e) => changeIzinHandler(e)}
-                  id=""
-                  className=" border-2 border-slate-500 rounded-xl pl-3 w-full h-[30px]"
-                >
-                  <option value="">- Select Kurikulum -</option>
-
-                  {kurikulum.map((item, index) => {
-                    if (item.id == izinEdit.kurikulum) {
-                      return (
-                        <option key={index} value={`${item.id}`} selected>
-                          {item.name}
-                        </option>
-                      );
-                    } else {
-                      return (
-                        <option key={index} value={`${item.id}`}>
-                          {item.name}
-                        </option>
-                      );
-                    }
-                  })}
-                </select>
-                {errIzin?.kurikulum ? (
-                  <p className="text-red-500 text-sm">*{errIzin?.kurikulum}</p>
                 ) : null}
               </div>
               {izinEdit.typeIzin == "Keluar" ? (

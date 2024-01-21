@@ -13,6 +13,7 @@ import { FaUber, FaUser } from "react-icons/fa";
 export default function Sidebar({ open, setSidebar, width, setWidth }) {
   const { user } = useSelector((state) => state.user);
   let sidebarMenu = [];
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   if (user?.role == 1) {
     sidebarMenu = [
       {
@@ -64,15 +65,15 @@ export default function Sidebar({ open, setSidebar, width, setWidth }) {
         url: "/home",
         icon: <GrHomeRounded className={` fill-white  my-auto`} />,
       },
-      {
-        title: "Permintaan Izin Siswa",
-        url: "/PermintaanIzinSiswa",
-        icon: <BsCardChecklist className={`  my-auto`} />,
-      },
+      // {
+      //   title: "Permintaan Izin Siswa",
+      //   url: "/PermintaanIzinSiswa",
+      //   icon: <BsCardChecklist className={`  my-auto`} />,
+      // },
       {
         title: "Permintaan Izin Guru",
         url: "/PermintaanIzin",
-        icon: <BsPencilSquare className="my-auto" />,
+        icon: <BsCardChecklist className="my-auto" />,
       },
       {
         title: "Pengguna",
@@ -126,7 +127,7 @@ export default function Sidebar({ open, setSidebar, width, setWidth }) {
       <GiHamburgerMenu
         className={`left-3 fixed top-2 z-50`}
         size={25}
-        onClick={() => setWidth(!width)}
+        onClick={() => {setWidth(!width);setSidebarOpen(!isSidebarOpen)}}
       />
       <div
         className={`fixed h-[100vh] bg-white left-0 z-40 ${

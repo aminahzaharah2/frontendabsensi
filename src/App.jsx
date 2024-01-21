@@ -23,6 +23,7 @@ import PermintaanIzinSiswa from "./pages/Kurikulum/PermintaanIzinSiswa";
 import NotfoundPage from "./pages/NotfoundPage";
 import NfPage from "./pages/NfPage";
 import DetailUser from "./pages/Kurikulum/DetailUser";
+import IzinByUser from "./pages/Kurikulum/IzinByUser";
 
 function App() {
   const { isLogin, user } = useSelector((state) => state.user);
@@ -52,7 +53,7 @@ function App() {
               element={<PermissionGuruPengajar />}
             />
             <Route path="/PermintaanIzinGuru" element={<IzinGuru />} />
-            <Route path="/Detail/:id" element={<DetailIzin />} />
+            <Route path="/Detail/:id/:role" element={<DetailIzin />} />
             <Route path="/Profile" element={<EditProfilePage />} />
           </Routes>
         ) : user?.role === 4 ? (
@@ -75,11 +76,12 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/AllUsers" element={<AllUser />} />
             <Route path="/PermintaanIzin" element={<SemuaIzinGuru />} />
+            <Route path="/IzinByUser/:iduser/:role/:tipe/:statusFilter" element={<IzinByUser/>}/>
             <Route
               path="/PermintaanIzinSiswa"
               element={<PermintaanIzinSiswa />}
             />
-            <Route path="/Detail/:id" element={<DetailIzin />} />
+            <Route path="/Detail/:id/:role" element={<DetailIzin />} />
             <Route path="/Profile" element={<EditProfilePage />} />
             <Route path="*" element={<NotfoundPage />} />
           </Routes>
@@ -88,7 +90,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/Izin" element={<SemuaIzin />} />
-            <Route path="/Detail/:id" element={<DetailIzin />} />
+            <Route path="/Detail/:id/:role" element={<DetailIzin />} />
             <Route path="/Profile" element={<EditProfilePage />} />
             <Route path="*" element={<NotfoundPage />} />
           </Routes>

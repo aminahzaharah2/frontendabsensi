@@ -83,9 +83,9 @@ export default function TabelUser({ data, children }) {
       }).then((result) => {
         if (result.isConfirmed) {
           const res = axios.delete(`${BACKEND_BASE_URL}api/deleteUser/${id}`);
-          if (res.status == 200) {
+          if(res){
             Swal.fire({
-              title: "Terhaous",
+              title: "Terhapus",
               text: "User berhasil dihapus",
               icon: "success",
               showConfirmButton: false,
@@ -173,6 +173,16 @@ export default function TabelUser({ data, children }) {
       headerName: "Role",
       minWidth: 100,
       flex: 0.7,
+      renderCell: (params) => {
+        return (
+          <div className="flex">
+            {params?.row?.role == 1? "Siswa":
+            params?.row?.role == 2?"Guru Pengajar":
+            params?.row?.role == 4?"Admin":"Kurikulum"
+            }
+          </div>
+        );
+      },
     },
     {
       field: "nohp",
@@ -190,7 +200,15 @@ export default function TabelUser({ data, children }) {
       renderCell: (params) => {
         return (
           <div className="flex">
-            <button
+            {user?.role === 5 ? (
+              <button
+                className="ml-3"
+                onClick={() => nav(`/DetailUser/${params.id}`)}
+              >
+                <AiOutlineEye color="" size={20} />
+              </button>
+            ) : <>
+                        <button
               onClick={() => deletePetugas(params.id, params?.row?.nama)}
               className="mr-4"
             >
@@ -199,14 +217,7 @@ export default function TabelUser({ data, children }) {
             <button className="" onClick={() => nav(`/EditUser/${params.id}`)}>
               <BiEditAlt color="blue" size={20} />
             </button>
-            {user?.role === 5 ? (
-              <button
-                className="ml-3"
-                onClick={() => nav(`/DetailUser/${params.id}`)}
-              >
-                <AiOutlineEye color="" size={20} />
-              </button>
-            ) : null}
+            </>}
           </div>
         );
       },

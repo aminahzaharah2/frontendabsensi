@@ -20,7 +20,7 @@ export default function AddUser() {
     role: "",
     noHP: "",
     kelas: "",
-    fotoprofile: "",
+    fotoprofile: "https://asset.cloudinary.com/dkt6ysk5c/6ebeef52a68172522d13b465667b6e95",
   });
 
   const [err, setErr] = useState({
@@ -198,7 +198,6 @@ export default function AddUser() {
                   <option value="5">Kurikulum</option>
                   <option value="1">Siswa</option>
                   <option value="2">Guru Pengajar</option>
-                  <option value="3">Guru Piket</option>
                 </select>
                 {err.role ? (
                   <p className="text-sm text-red-500">*{err.role}</p>

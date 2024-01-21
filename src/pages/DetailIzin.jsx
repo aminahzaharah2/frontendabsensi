@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
 export default function DetailIzin() {
-  const { id } = useParams();
+  const { id, role } = useParams();
   const nav = useNavigate();
   const { user } = useSelector((state) => state.user);
   const [open, setOpen] = useState(false);
@@ -324,7 +324,7 @@ export default function DetailIzin() {
                   izin[0]?.statusPengajuan == "pending" &&
                   izin[0].guruPengajar == null &&
                   izin[0].responGuruPengajar == null &&
-                  izin[0]?.idUser != user.id) ? (
+                  izin[0]?.idUser != user.id && role != 0) ? (
                   <div className="w-full justify-center mt-12 mb-[100px] flex items-center ">
                     <button
                       onClick={(e) => BeriIzin(e)}

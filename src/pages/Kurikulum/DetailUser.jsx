@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/layout/Sidebar";
 import TopBar from "../../components/layout/TopBar";
 import { useSelector } from "react-redux";
-import { BACKEND_BASE_URL } from "../../config/base_url";
+import { BACKEND_BASE_URL, BASE_URL } from "../../config/base_url";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
@@ -118,7 +118,7 @@ export default function DetailUser() {
           <div className="w-[90%] mx-auto">
             <div className="mt-10  w-full mx-auto  rounded-lg h-[40vh]  block lg:flex xl:flex md:flex ">
               <div className=" grid grid-cols-3 gap-4  mx-auto w-full ">
-                <div className="h-[120px] pl-3 pt-6 relative z-30 rounded-md w-[100%] bg-[#155f95]">
+                <div className="h-[120px] pl-3 pt-6 relative z-30 rounded-md w-[100%] bg-[#155f95]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/Masuk/no`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.masuk}
                   </h1>
@@ -127,16 +127,16 @@ export default function DetailUser() {
                   </h1>
                 </div>
 
-                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#FDB022]">
+                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#FDB022]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/Keluar/no`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.keluar}
                   </h1>
-                  <h1 className=" text-white font-[500] text-[16px]">
+                  <h1 className=" text-white font-[500] text-[16px]" >
                     Izin Keluar
                   </h1>
                 </div>
 
-                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#36BFFA]">
+                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#36BFFA]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/Pulang/no`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.pulang}
                   </h1>
@@ -145,7 +145,7 @@ export default function DetailUser() {
                   </h1>
                 </div>
 
-                <div className=" pl-3 pt-6 h-[120px] relative rounded-md w-[100%] bg-[#32D583] ">
+                <div className=" pl-3 pt-6 h-[120px] relative rounded-md w-[100%] bg-[#32D583]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/no/Diizinkan`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.diizinkan}
                   </h1>
@@ -154,7 +154,7 @@ export default function DetailUser() {
                   </h1>
                 </div>
 
-                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#F04438]">
+                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#F04438]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/no/Ditolak`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.ditolak}
                   </h1>
@@ -163,7 +163,7 @@ export default function DetailUser() {
                   </h1>
                 </div>
 
-                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#000]">
+                <div className="h-[120px] pl-3 pt-6 relative rounded-md w-[100%] bg-[#000]" onClick={()=>window.location.href = `${BASE_URL}/IzinByUser/${dataUser?.id}/${dataUser.role}/no/no`}>
                   <h1 className=" text-white font-[500] text-[20px]">
                     {izin?.masuk + izin?.keluar + izin?.pulang}
                   </h1>

@@ -153,7 +153,7 @@ export default function TabelIzinGuru({ data, children }) {
                 <button
                   className="mr-4"
                   onClick={() => {
-                    nav("/Detail/" + params.id);
+                    nav("/Detail/" + params.id+"/1");
                   }}
                 >
                   <BsEye size={20} />
@@ -276,7 +276,7 @@ export default function TabelIzinGuru({ data, children }) {
                   <button
                     className="mr-4"
                     onClick={() => {
-                      nav("/Detail/" + params.id);
+                      nav("/Detail/" + params.id+"/1");
                     }}
                   >
                     <BsEye size={20} />
@@ -685,7 +685,7 @@ export default function TabelIzinGuru({ data, children }) {
               ) : (
                 <>
                   <div className="w-full mt-4">
-                    <h1 className="font-abc pb-2">Jam Masukkkkkk</h1>
+                    <h1 className="font-abc pb-2">Jam Masuk</h1>
                     <input
                       type="time"
                       value={izin.jamMasuk}

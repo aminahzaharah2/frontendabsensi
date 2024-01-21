@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 
 export default function DetailCard() {
   const { user } = useSelector((state) => state.user);
-  // Split timestamp into [ Y, M, D, h, m, s ]
-  console.log(user);
   const originalDate = new Date(user?.created_at);
 
   const options = {

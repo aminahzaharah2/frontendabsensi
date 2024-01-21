@@ -15,6 +15,7 @@ export default function EditUser() {
     email: "",
     noHP: "",
     role: "",
+    kelas: "",
   });
   const [err, setErr] = useState({
     name: "",
@@ -22,6 +23,7 @@ export default function EditUser() {
     password: "",
     role: "",
     noHP: "",
+    kelas: "",
   });
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -39,7 +41,9 @@ export default function EditUser() {
         email: res.data.results.email,
         noHP: res.data.results.noHP,
         role: res.data.results.role,
+        kelas: res?.data?.results?.kelas,
       });
+      console.log("wkwkwk :", userSelected.kelas);
     } catch (e) {
       console.log(e);
     }
@@ -122,6 +126,19 @@ export default function EditUser() {
             />
             {err.noHP ? <p>{err.noHP}</p> : null}
           </div>
+          {userSelected.role == 1? 
+                  <div className="w-full mt-6">
+                  <h1 className="font-abc font-[500]">Kelas</h1>
+                  <input
+                    type="text"
+                    name="kelas"
+                    onChange={(e) => changeDataHandler(e)}
+                    value={userSelected.kelas}
+                    className="w-full h-[35px] border-2 pl-2 border-slate-500 rounded-md"
+                  />
+                  {err.noHP ? <p>{err.noHP}</p> : null}
+                </div>:null  
+        }
           <div className="w-full mt-4">
             <h1 className="font-abc pb-2 ">Role</h1>
             <select

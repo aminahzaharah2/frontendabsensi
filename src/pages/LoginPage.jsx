@@ -36,7 +36,9 @@ export default function LoginPage({ children }) {
   const login = async (e) => {
     e.preventDefault();
     try {
+
       const response = await axios.post(`${BACKEND_BASE_URL}api/login`, data);
+
 
       localStorage.setItem("token", response.data.message);
       const content = response.data.message;

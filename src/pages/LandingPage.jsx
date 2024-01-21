@@ -13,7 +13,8 @@ export default function LandingPage() {
   mode: 'cors',
   headers: {
     'Access-Control-Allow-Origin':'*'
-  }
+  },
+     method : "GET" 
 }
 );
     console.log("kont",data.json());

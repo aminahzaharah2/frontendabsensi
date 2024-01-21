@@ -9,7 +9,11 @@ export default function LandingPage() {
   const { user } = useSelector((state) => state.user);
   const [test, setTest] = useState([])
   const getTest = async() => {
-    const data = await fetch(`${BACKEND_BASE_URL}api/getUser`);
+    const data = await fetch(`${BACKEND_BASE_URL}api/getUser` ,  mode: 'cors',
+  headers: {
+    'Access-Control-Allow-Origin':'*'
+  }
+);
     console.log("kont",data.json());
   }
   const nav = useNavigate();

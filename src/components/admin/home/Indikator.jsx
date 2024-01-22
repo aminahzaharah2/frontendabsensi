@@ -145,7 +145,7 @@ export default function Indikator() {
                 <h1 className=" text-white font-[500] text-[20px]">
                   {admin?.admin}
                 </h1>
-                <h1 className=" text-white font-[500] text-[16px]">Admin</h1>
+                <h1 className=" text-white font-[500] text-[16px]">Guru Piket</h1>
               </div>
             </Link>
             <Link to={"/AllUsers"}>
@@ -282,7 +282,7 @@ export default function Indikator() {
                   {kurikulum?.admin}
                 </h1>
                 <h1 className=" text-white font-[500] text-[16px]">
-                  Daftar Admin
+                  Daftar Guru Piket
                 </h1>
               </div>
             </Link>

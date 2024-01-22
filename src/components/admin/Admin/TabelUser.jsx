@@ -178,7 +178,7 @@ export default function TabelUser({ data, children }) {
           <div className="flex">
             {params?.row?.role == 1? "Siswa":
             params?.row?.role == 2?"Guru Pengajar":
-            params?.row?.role == 4?"Admin":"Kurikulum"
+            params?.row?.role == 4?"Guru Piket":"Kurikulum"
             }
           </div>
         );
@@ -276,7 +276,7 @@ export default function TabelUser({ data, children }) {
                 className=" border-2 border-slate-500 rounded-xl pl-3 w-full h-[30px]"
                 onChange={(e) => changeDataHandler(e)}
               >
-                <option value="4">Admin</option>
+                <option value="4">Guru Piket</option>
                 <option value="">Pilih Role</option>
                 <option value="1">Siswa</option>
                 <option value="2">Guru Pengajar</option>
@@ -324,7 +324,7 @@ export default function TabelUser({ data, children }) {
                       className="border h-[34px] rounded-xl mt-2 w-[100px] pl-2 "
                     >
                       <option value="">Role</option>
-                      <option value="4">Admin</option>
+                      <option value="4">Guru Piket</option>
                       <option value="2">Guru</option>
                       <option value="1">Siswa</option>
                       <option value="5">Kurikulum</option>

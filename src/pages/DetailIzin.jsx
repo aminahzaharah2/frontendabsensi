@@ -63,7 +63,7 @@ export default function DetailIzin() {
               // Fungsi ini akan dipanggil setelah SweetAlert ditutup
               window.location.href =
                 user?.role === 5
-                  ? `${BASE_URL}/Detail/${id}`
+                  ? `${BASE_URL}/PermintaanIzin`
                   : `${BASE_URL}/PermintaanIzin`;
             },
           });
@@ -91,6 +91,7 @@ export default function DetailIzin() {
             `${BACKEND_BASE_URL}api/TolakPengajuan/${id}/${user?.role}`
           );
 
+
           Swal.fire({
             title: "Berhasil menolak izin",
             showConfirmButton: false,
@@ -99,10 +100,11 @@ export default function DetailIzin() {
             didClose: () => {
               window.location.href =
                 user?.role === 5
-                  ? `${BASE_URL}/Detail/${id}`
+                  ? `${BASE_URL}/PermintaanIzin`
                   : `${BASE_URL}/PermintaanIzin`;
             },
           });
+
         }
       });
     } catch (err) {

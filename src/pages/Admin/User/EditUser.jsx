@@ -150,10 +150,10 @@ export default function EditUser() {
               <option value="">Pilih Role</option>
               {userSelected.role == "4" ? (
                 <option value="4" selected>
-                  Admin
+                  Guru Piket
                 </option>
               ) : (
-                <option value="4">Admin</option>
+                <option value="4">Guru Piket</option>
               )}
               {userSelected.role == "1" ? (
                 <option value="1" selected>

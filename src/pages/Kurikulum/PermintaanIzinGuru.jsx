@@ -54,7 +54,7 @@ export default function PermintaanIzinGuru() {
   return (
     <div className="w-full h-[100vh] flex">
       <div className={``}>
-        <Sidebar setSidebar={2} width={open} setWidth={setOpen} />
+        <Sidebar setSidebar={3} width={open} setWidth={setOpen} />
       </div>
       <div className={`w-11/12 mx-auto`}>
         <TopBar>{"Semua Izin"}</TopBar>

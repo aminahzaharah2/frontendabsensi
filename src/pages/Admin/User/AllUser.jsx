@@ -34,7 +34,7 @@ export default function AllUser() {
     <div className="w-full min-h-screen mb-[100px] flex">
       <div className={``}>
         <Sidebar
-          setSidebar={user?.role === 5 ? 4 : 2}
+          setSidebar={user?.role === 5 ? 3 : 2}
           width={open}
           setWidth={setOpen}
         />

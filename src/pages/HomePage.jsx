@@ -21,7 +21,7 @@ export default function HomePage() {
               : user?.role === 2
               ? "Dashboard Guru"
               : user?.role === 4
-              ? "Dashboard Admin"
+              ? "Dashboard Guru Piket"
               : "Dashboard Kurikulum"}
           </TopBar>
           <div className="w-full mt-2 h-[50px] ">

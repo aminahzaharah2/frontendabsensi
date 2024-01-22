@@ -50,7 +50,7 @@ export default function DetailUser() {
     <div>
       <div className="w-full min-h-screen xl:mb-[100px] md:mb-[100px] mb-[500px] lg:mb-[100px]">
         <div className={` `}>
-          <Sidebar setSidebar={4} width={open} setWidth={setOpen} />
+          <Sidebar setSidebar={3} width={open} setWidth={setOpen} />
         </div>
         <div className={`w-11/12 mx-auto`}>
           <TopBar>{"Detail User"}</TopBar>

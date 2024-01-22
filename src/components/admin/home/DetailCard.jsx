@@ -40,7 +40,7 @@ export default function DetailCard() {
             : user?.role == 2
             ? "Guru Pengajar"
             : user?.role == 4
-            ? "Admin"
+            ? "Guru Piket"
             : "Kurikulum"}
         </h1>
       </div>
